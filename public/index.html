@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <h1> Hello Naga </h1>
+</head>
+<body>
+    <script src= '/socket.io/socket.io.js' ></script>
+    <script>let clientSocket =  io();
+    clientSocket.on('connect', function(){
+        console.log('Connection is made btw me and the server')
+    })
+
+    clientSocket.on('emiCheyali', function(email){
+        console.log(email)
+    })
+
+    //emit means sending
+    clientSocket.emit('sleep', {
+        sleep:'nidrapovali',
+    }, function(){
+        console.log('Message elivered sussfullykljghjkl')
+    })
+
+    </script> 
+
+</body>
+</html>
