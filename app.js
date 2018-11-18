@@ -3,12 +3,13 @@ const app = express();
 const bodyParser = require('body-parser')
 const socketIO = require('socket.io')
 const http = require('http')
+const port = process.env.PORT || 3000
 
 const app1 = http.createServer(app)
 
 app.use(express.static(__dirname + '/public'))
 
-const io = socketIO(app1.listen(3000, () => {
+const io = socketIO(app1.listen(PORT, () => {
     console.log(`server started at 3000`)
 }))
 
