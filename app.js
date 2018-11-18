@@ -9,7 +9,7 @@ const app1 = http.createServer(app)
 
 app.use(express.static(__dirname + '/public'))
 
-const io = socketIO(app1.listen(PORT, () => {
+const io = socketIO(app1.listen(port, () => {
     console.log(`server started at 3000`)
 }))
 
