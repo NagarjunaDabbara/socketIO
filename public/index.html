@@ -4,28 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/styles.css">
     <title>Document</title>
-    <h1> Hello Naga </h1>
+       
 </head>
-<body>
+<body class="chat"> 
+    <div class="chat__sidebar">
+        <h3>People</h3>
+        <div id="users"> </div>
+    </div>
+
+    <div class="chat__main">
+    <ol id="Messages" class="chat__messages"></ol>
+    <div class="chat__footer">
+        <form id="form-name">
+          <input id="inputName" type="text" placeholder="Your message here" autofocus autocomplete="off"/>
+        <button id="buttonId"> Submit </button>
+        </form>
+    </div>
+</div>
+       
+    <script src='/jQuery.js'></script>
     <script src= '/socket.io/socket.io.js' ></script>
-    <script>let clientSocket =  io();
-    clientSocket.on('connect', function(){
-        console.log('Connection is made btw me and the server')
-    })
-
-    clientSocket.on('emiCheyali', function(email){
-        console.log(email)
-    })
-
-    //emit means sending
-    clientSocket.emit('sleep', {
-        sleep:'nidrapovali',
-    }, function(){
-        console.log('Message elivered sussfullykljghjkl')
-    })
-
-    </script> 
-
+    <script src='/clientSocketIO.js'></script>   
+ 
 </body>
 </html>
